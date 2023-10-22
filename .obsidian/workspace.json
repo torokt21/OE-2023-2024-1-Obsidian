@@ -1,0 +1,180 @@
+{
+  "main": {
+    "id": "1dcd70289aa0a631",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ac719291c32fe37",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "39c801a0393456bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Websec/2. Fejezet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "07e623400aee8ae8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tudnivalók.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a3e5953b0da55b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "637fcbbaf290084e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "acd2ff1923852954",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d4796c073474d5d5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9e4a9c180da25a50",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2dd8aec21bbf98d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "d15133382ec963df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c89e2c993cda19a8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tudnivalók.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e4edf419904a5596",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tudnivalók.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9e6f531a52517613",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "079019b6642e8e8f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tudnivalók.md"
+              }
+            }
+          },
+          {
+            "id": "138b8d9d3d7e993b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "07e623400aee8ae8",
+  "lastOpenFiles": [
+    "Websec/1. Fejezet.md",
+    "Websec/2. Fejezet.md",
+    "Websec",
+    "Tudnivalók.md",
+    "Untitled"
+  ]
+}
