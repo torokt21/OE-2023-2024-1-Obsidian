@@ -38,22 +38,22 @@ COPY ./index.php /var/www/html/index.php
 
 `docker image build -t torokt21/todoman .` - az image létrehozása. a pont (.) kell, mert a jelenlegi mappából kell csinálni
 
-docker  login
-docker image push torokt21/todomanager:latest
+`docker  login`
+`docker image push torokt21/todomanager:latest`
 
 SQL indítása
-docker run --restart=always -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Almafa123" -p 1433:1433 --name mssql --hostname mssql -d mcr.microsoft.com/mssql/server:2022-latest
+`docker run --restart=always -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Almafa123" -p 1433:1433 --name mssql --hostname mssql -d mcr.microsoft.com/mssql/server:2022-latest`
 
 Server exporerben kell hozzáadni a szerver
-IP alapján űködött  csak!
+IP alapján működött  csak!
 appsettings.json-be mehet a connection string
-Server=74.234.242.60;Database=hellomvc;User Id=sa;Password=Almafa123
+`Server=74.234.242.60;Database=hellomvc;User Id=sa;Password=Almafa123`
 
 Az imageben már
-Server=mssql;Database=hellomvc;User Id=sa;Password=Almafa123;
-mssql, mert aztr adtuk meg az SQL indítása lépésnél
+`Server=mssql;Database=hellomvc;User Id=sa;Password=Almafa123;`
+mssql, mert azt adtuk meg az SQL indítása lépésnél
 
 
 Action-ök beállítása gihubon (secrettel)
 
-docker run -d --rm --name hellomvc -p 80:80 --link mssql:mssql torokt21/hellomvc
+`docker run -d --rm --name hellomvc -p 80:80 --link mssql:mssql torokt21/hellomvc`
