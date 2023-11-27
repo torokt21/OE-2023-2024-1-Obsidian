@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Websec/2. Fejezet.md",
+                "file": "Gyakorlás/Gyakorlás.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DevOps/Parancsok.md",
+                "file": "DevOps/ZH + Önálló labor.md",
                 "mode": "source",
                 "source": false
               }
@@ -42,21 +42,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "503cff825ce7c747",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tudnivalók.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tudnivalók.md",
+                "file": "Gyakorlás/Gyakorlás.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tudnivalók.md",
+                "file": "Gyakorlás/Gyakorlás.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tudnivalók.md"
+                "file": "Gyakorlás/Gyakorlás.md"
               }
             }
           },
@@ -193,19 +180,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "503cff825ce7c747",
+  "active": "39c801a0393456bc",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "Tudnivalók.md",
     "DevOps/ZH + Önálló labor.md",
     "DevOps/Parancsok.md",
+    "Gyakorlás/Gyakorlás.md",
     "DevOps/Image.md",
     "DevOps/Container.md",
+    "Websec/2. Fejezet.md",
+    "Gyakorlás",
+    "Tudnivalók.md",
+    "Untitled.canvas",
     "Untitled 1",
     "DevOps",
     "Websec/1. Fejezet.md",
-    "Websec/2. Fejezet.md",
-    "Websec",
-    "Untitled"
+    "Websec"
   ]
 }
