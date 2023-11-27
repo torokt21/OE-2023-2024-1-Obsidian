@@ -102,4 +102,42 @@ certbot certonly --preferred-challenges http -d files.bee.bprof.hu --agree-tos -
 5) Engedélyezd a static file hostingot (alapvetően a /wwwroot-ból szolgál ki)  
 6) Csinálj egy view-t, ami megjeleníti a képeket pl. bootstrap cardokon  
 7) A konténert deployold, csatold bele a pictures mappát a wwwroot helyére  
-8) publikáld kifele photos.allat.bprof.hu címen certificate-el!
+Github actions
+```
+on:
+  push:
+    branches:
+      - "master"
+
+ 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./[DevOpsGyak]/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/[files]:latest
+
+```
+1) publikáld kifele photos.allat.bprof.hu címen certificate-el!
+`docker login -u torokt21`
+
+`docker run -d --name filelist -p 1234:443 -v /root/Photos/:/wwwroot/ torokt21/filelist
