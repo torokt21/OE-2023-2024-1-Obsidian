@@ -45,15 +45,18 @@ SQL indítása
 `docker run --restart=always -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Almafa123" -p 1433:1433 --name mssql --hostname mssql -d mcr.microsoft.com/mssql/server:2022-latest`
 
 Server exporerben kell hozzáadni a szerver
+
+Visual Studio > Tools > Connect to database
+
 IP alapján működött  csak!
 appsettings.json-be mehet a connection string
-`Server=74.234.242.60;Database=hellomvc;User Id=sa;Password=Almafa123`
+`Server=74.234.242.60;Database=photo;User Id=sa;Password=Almafa123`
 
 Az imageben már
 `Server=mssql;Database=hellomvc;User Id=sa;Password=Almafa123;`
 mssql, mert azt adtuk meg az SQL indítása lépésnél
 
 
-Action-ök beállítása gihubon (secrettel)
+Action-ök beállítása githubon (secrettel)
 
 `docker run -d --rm --name hellomvc -p 80:80 --link mssql:mssql torokt21/hellomvc`

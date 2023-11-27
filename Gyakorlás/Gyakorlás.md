@@ -4,18 +4,18 @@
 `mkdir Pictures`
 2) Telepítsd a FileBrowser konténert (https://filebrowser.org/installation)  
 3) Add át neki a Picture mappát /srv néven 
-`docker run -d --name filebrowser -v /root/Pictures:/srv -e PUID=$(id -u) -e PGID=$(id -g) -p 8080:80 filebrowser/filebrowser:s6`
+`docker run -d --name filebrowser -v /root/Picture:/srv -e PUID=$(id -u) -e PGID=$(id -g) -p 8080:80 filebrowser/filebrowser:s6`
 4) A Pictures mappára adj mindenkinek rw jogot (chmod 666)  
 `chmod 666 Pictures`
 5) A filebrowsert publikáld ki reverse proxyval a files.allat.bprof.hu címen, certificate legyen!  
 
 Reverse proxy
-`nano /etc/apache2/sites-available/files.conf`
+`nano /etc/apache2/sites-available/[files].conf`
 
 ```
-Define domain files.bee.bprof.hu
+Define domain [files].bee.bprof.hu
 
-Define port 8080
+Define port [8080]
 
 <VirtualHost *:80>
 
@@ -92,7 +92,7 @@ Certificate:
 `systemctl stop apache2.service`
 
 ```
-certbot certonly --preferred-challenges http -d files.bee.bprof.hu --agree-tos --manual-public-ip-logging-ok --register-unsafely-without-email --rsa-key-size 4096
+certbot certonly --preferred-challenges http -d [files].bee.bprof.hu --agree-tos --manual-public-ip-logging-ok --register-unsafely-without-email --rsa-key-size 4096
 ```
 
 `systemctl start apache2.service`
@@ -108,8 +108,6 @@ on:
   push:
     branches:
       - "master"
-
- 
 
 jobs:
   build:
@@ -137,7 +135,36 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/[files]:latest
 
 ```
-1) publikáld kifele photos.allat.bprof.hu címen certificate-el!
+8) publikáld kifele photos.allat.bprof.hu címen certificate-el!
+
+Ez nem is kell
 `docker login -u torokt21`
 
-`docker run -d --name filelist -p 1234:443 -v /root/Photos/:/wwwroot/ torokt21/filelist
+
+`docker run -d --name filelist -p 1234:80 -v /root/Photos/:/wwwroot/ torokt21/filelist
+
+MSSQL létrehozása
+```
+docker run --restart=always -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Almafa123" -p 1433:1433 --name mssql --hostname mssql -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
+# VS project
+Visual Studio > Tools > Connect to database
+Belépési adatok beállítása, az adatbázis név megadása után ok
+Hiba üzenet, hogy nem létezik az adatbázis, `[photo]` adatbázis létrehozása
+
+Connection string
+`Server=74.234.242.60;Database=[photo];User Id=sa;Password=Almafa123`
+
+utána
+`Update-Database`
+
+Connection string átállítása
+`Server=mssql;Database=[photo];User Id=sa;Password=Almafa123`
+
+Container elindítása linkeléssel
+`docker run -d --name filelist -p 1234:80 -v /root/Picture:/app/wwwroot/img --link mssql:mssql torokt21/filelist`
+
+
+Docker image frissítése, ha valami változott
+`docker pull torokt21/filelist:latest`
