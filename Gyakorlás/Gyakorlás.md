@@ -141,7 +141,7 @@ Ez nem is kell
 `docker login -u torokt21`
 
 
-`docker run -d --name filelist -p 1234:80 -v /root/Photos/:/wwwroot/ torokt21/filelist
+`docker run -d --name filelist -p 1234:80 -v /root/Photos/:/wwwroot/ torokt21/filelist`
 
 MSSQL létrehozása
 ```
